@@ -122,7 +122,7 @@ lib.mapAttrs (_: func: lib.makeOverridable func) {
         outputHashMode = "flat";
         outputHashAlgo = "sha256";
         outputHash = hash;
-        NETRC = builtins.length nixPath;
+        NETRC = "/etc/nixos/.netrc";
         passthru.isWheel = lib.strings.hasSuffix "whl" file;
       } ''
       python ${./fetch-from-legacy.py} ${url} ${pname} ${file}
