@@ -51,6 +51,7 @@ package_filename = sys.argv[3]
 # Parse username and password for this host from the netrc file if given.
 username: Optional[str] = None
 password: Optional[str] = None
+print("NETRC:" + os.environ["NETRC"])
 if os.environ["NETRC"]:
     print("NETRC:" + os.environ["NETRC"])
     netrc_obj = netrc.netrc(os.environ["NETRC"])
