@@ -122,7 +122,7 @@ lib.mapAttrs (_: func: lib.makeOverridable func) {
         outputHashMode = "flat";
         outputHashAlgo = "sha256";
         outputHash = hash;
-        NETRC = netrc_file;
+        NETRC = "test";
         passthru.isWheel = lib.strings.hasSuffix "whl" file;
       } ''
       python ${./fetch-from-legacy.py} ${url} ${pname} ${file}
