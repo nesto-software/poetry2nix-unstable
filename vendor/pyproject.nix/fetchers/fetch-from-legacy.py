@@ -52,6 +52,7 @@ package_filename = sys.argv[3]
 username: Optional[str] = None
 password: Optional[str] = None
 if os.environ["NETRC"]:
+    print("NETRC:" + os.environ["NETRC"])
     netrc_obj = netrc.netrc(os.environ["NETRC"])
     host = urlparse(index_url).netloc
     # Strip port number if present
@@ -60,6 +61,7 @@ if os.environ["NETRC"]:
     authenticators = netrc_obj.authenticators(host)
     if authenticators:
         username, _, password = authenticators
+        print(username)
 
 print("Reading index %s" % index_url)
 
